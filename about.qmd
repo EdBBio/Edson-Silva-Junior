@@ -1,0 +1,18 @@
+---
+title: "Edson Silva-Junior"
+image: foto4.jpeg
+about:
+  template: jolla
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com//edbbio
+    - icon: linkedin
+      text: LinkedIn
+      href: https://linkedin.com
+    - icon: github
+      text: Github
+      href: https://github.com
+---
+
+Bacharel em Ciências Biológicas pela UFPE, campus Recife. Aluno de Mestrado no Programa de Pós Graduação em Biologia Animal (PPGBA) - UFPE, e membro do Laboratório de Herpetologia (LHERP) - UFPE. Desempenha pesquisas principalmente com foco em entender como modificações e padrões ambientais afetam a diversidade e distribuição de anfíbios anuros na Mata Atlântica Nordestina. Atua na área de zoologia, com ênfase em herpetologia, com experiência em linguagem de programação R, com ênfase em modelagem estatística e ecológica.
