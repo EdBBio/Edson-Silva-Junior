@@ -12,7 +12,7 @@ page-layout: article
 title-block-banner: true
 ---
 
-![](profile.png)
+![](profile2.png)
 
 ```{=html}
 <style>

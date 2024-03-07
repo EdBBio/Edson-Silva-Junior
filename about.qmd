@@ -12,10 +12,10 @@ about:
       href: https://twitter.com//edbbio
     - icon: github
       text: Github
-      href: https://github.com
-    - icon: gmail
+      href: https://github.com//edbbio
+    - icon: google
       text: Gmail
-      href: edson.nilton@gmail.ufpe
+      href: mailto:edson.nilton@ufpe.br
 ---
 
 # **Formação**
@@ -38,4 +38,10 @@ about:
 
 # **Currículo Lattes**
 
-* [Edson Nilton de Moura Silva Júnior](https://buscatextual.cnpq.br/buscatextual/visualizacv.do)
+* [Edson Nilton de Moura Silva Júnior](http://lattes.cnpq.br/7652604604482680)
+
+---------------------
+
+# **Orcid**
+
+* [0009-0003-9116-2020](https://orcid.org/0009-0003-9116-2020)
