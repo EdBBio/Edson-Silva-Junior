@@ -6,10 +6,10 @@ about:
   links:
     - icon: instagram
       text: Instagram
-      href: https:://instagram.com//edbbio
+      href: https://www.instagram.com/edbbio?igsh=MWtqc2VwcnBkdW51Nw==
     - icon: twitter
       text: Twitter
-      href: https://twitter.com//edbbio
+      href: https://x.com/Edbbio?t=gf-6QmDmC7TKBkuYh-dlAg&s=09
     - icon: github
       text: Github
       href: https://github.com//edbbio
