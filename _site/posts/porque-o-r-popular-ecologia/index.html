@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.550">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Edson Silva-Júnior">
+
+<title>Edson Silva-Júnior - Por que o R se tornou popular na ecologia?</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<style>html{ scroll-behavior: smooth; }</style>
+
+
+<link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Edson Silva-Júnior</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Posts</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../about.html"> 
+<span class="menu-text">Formação e contatos</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-materiais-de-estudo" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Materiais de estudo</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-materiais-de-estudo">    
+        <li>
+    <a class="dropdown-item" href="../../slides_ecologia_numerica.pdf">
+ <span class="dropdown-text">slides Ecologia Numérica</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https:://instagram.com//edbbio"> <i class="bi bi-instagram" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com//edbbio"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com//edbbio"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="../../edson.nilton@gmail.ufpe"> <i class="bi bi-gmail" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Por que o R se tornou popular na ecologia?</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">review</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Edson Silva-Júnior </p>
+            </div>
+    </div>
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#o-r-é-realmente-popular-na-ecologia" id="toc-o-r-é-realmente-popular-na-ecologia" class="nav-link active" data-scroll-target="#o-r-é-realmente-popular-na-ecologia"><strong>O R é realmente popular na ecologia?</strong></a></li>
+  <li><a href="#o-que-faz-ser-tão-popular" id="toc-o-que-faz-ser-tão-popular" class="nav-link" data-scroll-target="#o-que-faz-ser-tão-popular"><strong>O que faz ser tão popular?</strong></a>
+  <ul>
+  <li><a href="#modelagem-estatística" id="toc-modelagem-estatística" class="nav-link" data-scroll-target="#modelagem-estatística">Modelagem estatística</a></li>
+  <li><a href="#modelagem-ecológicas" id="toc-modelagem-ecológicas" class="nav-link" data-scroll-target="#modelagem-ecológicas">Modelagem ecológicas</a></li>
+  <li><a href="#análises-geoespaciais" id="toc-análises-geoespaciais" class="nav-link" data-scroll-target="#análises-geoespaciais">Análises geoespaciais</a></li>
+  <li><a href="#controle-de-dados-e-reprodutibilidade" id="toc-controle-de-dados-e-reprodutibilidade" class="nav-link" data-scroll-target="#controle-de-dados-e-reprodutibilidade">Controle de dados e reprodutibilidade</a></li>
+  <li><a href="#visualização-de-dados" id="toc-visualização-de-dados" class="nav-link" data-scroll-target="#visualização-de-dados">Visualização de dados</a></li>
+  </ul></li>
+  <li><a href="#qual-o-futuro" id="toc-qual-o-futuro" class="nav-link" data-scroll-target="#qual-o-futuro"><strong>Qual o futuro?</strong></a></li>
+  </ul>
+</nav>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p>Um review sobre o que fez o R ser a principal ferramenta de analises de dados ecológicos.</p>
+<style>
+body {
+text-align: justify;
+font-size: 20px}
+blockquote {
+  background-color: #FAEFA6;
+  padding: 10px;
+  font-size: 14.5px
+}
+</style>
+<p><img src="image.png" class="img-fluid"></p>
+<p>Se você trabalha com ecologia, dificilmente não teve algum contato com o R, mesmo que você não o use. O R atualmente se tornou a principal ferramento dos ecólogos e biólogos interessados em meio ambiente no quesito análise de dadso. Mesmo quem não o usa acab tendo um contato, nem que de forma indireta, com ele, graças a colegas e colaboradores. O R se tornou quase que onipresente ao redor do mundo nos grupos de pesquisa sobre ecologia. Mas Por que tanta popularidade para essa linguagem de proogramação nesse contexto?</p>
+<section id="o-r-é-realmente-popular-na-ecologia" class="level1">
+<h1><strong>O R é realmente popular na ecologia?</strong></h1>
+<p>A primeira pergunta necessária para começar essa conversa: o R é tão popular assim? A resposta mais direta: sim, e há dados sobre isso.</p>
+<p>Em um trabalho publicado por Lai <em>et al.</em> (<a href="https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecs2.2567#:~:text=The%20increasing%20popularity%20of%20R,codes%20are%20included%20and%20shared">2019</a>), os pesquisadores observaram a frequência de citaçãoes de pacotes R em mais de 60.000 artigos, publicados em 30 revistas especializadas e, ecologia, durante o período de 2007-2017. O que eles observaram foi um crescimento constante quase que perfeito ao longo dos anos (r = 0,99, p &lt; 0,0001).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="lai et al. 2019.jpeg" class="img-fluid figure-img"></p>
+<figcaption><a href="https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecs2.2567#:~:text=The%20increasing%20popularity%20of%20R,codes%20are%20included%20and%20shared">Lai <em>et al.</em> 2019</a></figcaption>
+</figure>
+</div>
+<p>Isso nos ajuda a ter um pouco de dimensão de que, ao longo dos anos, não apenas sua popularidade cresceu na ecologia, como é existente e em marcante.</p>
+</section>
+<section id="o-que-faz-ser-tão-popular" class="level1">
+<h1><strong>O que faz ser tão popular?</strong></h1>
+<section id="modelagem-estatística" class="level2">
+<h2 class="anchored" data-anchor-id="modelagem-estatística">Modelagem estatística</h2>
+<p><img src="regressao.png" class="img-fluid"></p>
+<p>A ecologia é uma das ciências da vida com um dos mais fortes usos de esatística para responder suas perguntas. É até considerada uma “desilusão” que muitos passam ao iniciar na ecologia perceber que boa parte do seu trablho será modelando dados. Como o intuíto da própria criação do R está em ser uma linguagem de programação voltada e acessível a cientistas, principalmente os que usam estatística, O R é quase que a linguagem de programação perfeita para a ecologia.</p>
+<p>O R apresenta diversas ferramentas flexíveis e muito úteis nesses estudos, como o próprio pacot nativo <a href="https://rdrr.io/r/stats/stats-package.html">stats</a>, que possui as principais funções estatísticas, como estaística descritiva e os testes de hipótese. Além de outros pacotes relacionados, como o pacote <a href="https://github.com/vegandevs/vegan">vegan</a>, que além de trazer análises sobre métricas de ecologia de comunidades, ainda oferece análises estatísticas multidimensionais, como nMDS, RDA e PERMANOVA, <a href="">betareg</a>, que permite a criação de modelos de GLM (<em>Generalized Linear Models</em> - Modelos Lineares Generalizados) com distribuição beta dos resíduos, <a href="https://CRAN.R-project.org/package=gamm4">gamm4</a>, para a criação de GAMs (<em>Generalized Additive Models</em> - Modelos Aditivos Generalizados), e o pacote <a href="https://easystats.github.io/performance/">performance</a>, para diversos tipos de avaliações de modelo.</p>
+<p>devido essa grande variedade de ferramentas dee modelagem estatística, assim como diversos outros pacotes faz com que seja possível utilizar diversas análises juntas, em um mesmo pacote, assim como reutilizar dados destas para análises posteriores.</p>
+</section>
+<section id="modelagem-ecológicas" class="level2">
+<h2 class="anchored" data-anchor-id="modelagem-ecológicas">Modelagem ecológicas</h2>
+<p><img src="modelagem_nicho.png" class="img-fluid"></p>
+<p>Toda ciência tem suas <code>análises exclusivas</code>, e a ecologia não é excessão. Além do já citado pacote <a href="https://github.com/vegandevs/vegan">vegan</a>, muito utilizado para análises de diversidade biológica de ecologia de comunidades, há também outros pacotes, como o pacote <a href="https://cran.r-project.org/web/packages/FD/index.html">FD</a>, para análises de diversidade funcional, o pacote <a href="https://doi.org/10.18637/jss.v022.i04">ade4</a>, também utilizado para estudos sobre ecologia e evolução. Para citar pacotes brasileiros, há o pacote <a href="https://github.com/paternogbc/ecodados">ecodados</a>, que é um pacote que reúne diversas bases de dados, com fins de ensino de ecologia.</p>
+<p>Além destes, há um conjunto de pacotes voltados aos SDM (<em>Species Dsitribution Models</em> - Modelos de Dsitribuição de Espécies), como os pacotes <a href="https://github.com/babaknaimi/sdm">sdm</a>, <a href="https://doi.org/10.1111/j.1600-0587.2013.00205.x">usdm</a> e <a href="https://CRAN.R-project.org/package=dismo">dismo</a>.</p>
+<p>Um aspecto interessante sobre como o R funciona que facilita as análises de fins ecológicos é que, pelo R ser uma linguuage de código aberto, o que significa que qualquer um pode contribuir com a criação de novos pacotes, adiconado à grande velocidade com o qual novos métodos sobre ecologia acontecem, faz com que o R Seja um ambiente ideal para o uso de ferramentas de análises de dados ecológicos.</p>
+</section>
+<section id="análises-geoespaciais" class="level2">
+<h2 class="anchored" data-anchor-id="análises-geoespaciais">Análises geoespaciais</h2>
+<p><img src="biomas.png" class="img-fluid"></p>
+<p>Uma boa parte de estudos ecológicos se dá em análises e tratamentos de dados geoespaciais. Nos últimos anos, o R tem desempenhado um papel importante dentro das linguagens de programção voltadas para as ciências de dados na parte de análises geoespaciais.</p>
+<p>No R, há um conjunto de pacotes muito úteis para diversos desses fins. Exemplos são os pacotes <a href="https://doi.org/10.1201/9780429459016">sf</a> e <a href="https://CRAN.R-project.org/doc/Rnews/">sp</a>, muito úteis para análises e tratamentos de shapefiles (<code>.shp</code>, <code>.kml</code> e <code>.kmz</code>), os pacotes <a href="https://CRAN.R-project.org/package=raster">raster</a>, <a href="https://CRAN.R-project.org/package=geodata">geodata</a> e <a href="https://CRAN.R-project.org/package=terra">terra</a>, bastante versáteis em análises de rasters (<code>.tif</code> e <code>.tiff</code>), e o há pouco tempo lançado <a href="https://doi.org/10.21105/joss.05751">tidyterra</a>, implementando ótimas ferramentas para a visualização de dados geoespaciais.</p>
+</section>
+<section id="controle-de-dados-e-reprodutibilidade" class="level2">
+<h2 class="anchored" data-anchor-id="controle-de-dados-e-reprodutibilidade">Controle de dados e reprodutibilidade</h2>
+<p><img src="histograma.png" class="img-fluid"></p>
+<p>Uma das principais características de uma ciência considerada <code>boa</code> e <code>de qualidade</code> é um alto grau de reprodutibilidade: a capacidade de outros repetirem as mesmas investições e chegarem em resultados muito semelhantes. Parte dessa boa prática vem de um controle na fase de análise e modelagem dos dados.</p>
+<p>Aliado aos tópicos explicados anteriormentes, por ser uma linguagem de programação, o R permite não apenas comparar práticas, assim como também revisar as etapas das análises dos dados. Além disso, o R atualmente apresenta um conjunto ferramentas muito úteis para o tratamento e processamento de dados, principalmente nos pacotes que fazem parte do grupo <a href="https://www.tidyverse.org/">tidyverse</a>, dando maior mobilidade para as análises, mesmo em bancos de dados com estruturações não tão vantajosas.</p>
+</section>
+<section id="visualização-de-dados" class="level2">
+<h2 class="anchored" data-anchor-id="visualização-de-dados">Visualização de dados</h2>
+<p><img src="rda.png" class="img-fluid"></p>
+<p>Por mais que o que de fato seja o <code>ouro</code> dos artigos sejam os resultados, principalmente os valores de análises estatísticas, muito do que fazem os artigos, assim como seus resultados, são os gráficos. No caso da ecologia, mapas também.</p>
+<p>Atualmente, o R é a linguagem de programação mais avançada no que se refere À riação de gráficos e mapas. Grande parte disso é devido ao pacote <a href="https://ggplot2.tidyverse.org/index.html">ggplot2</a>, um dos pacotes do grupo <a href="https://www.tidyverse.org/">tidyverse</a>, que permite a criação de mapas com uma variedade muito grande de formas e cores. Aliado ao pacote, existem outros pacotes que servem como extenções deste, como o já citado <a href="https://doi.org/10.21105/joss.05751">tidyterra</a>, para a criação de mapas, e o pacote <a href="https://CRAN.R-project.org/package=ggtext">ggtext</a>, para textos como caracteres complexos. Além de gráficos, há pacotes para a criação de tabelas, como os pacotes <a href="https://CRAN.R-project.org/package=flextable">flextable</a> e <a href="https://CRAN.R-project.org/package=gt">gt</a>. Para dados complexos, assim como diversas informações sobre análises e modelos estatísticos feitos, muito comuns na ecologia, o R se torna uma ferramenta insdispensável.</p>
+</section>
+</section>
+<section id="qual-o-futuro" class="level1">
+<h1><strong>Qual o futuro?</strong></h1>
+<p>Existe uma linha tênue na futurologia entre análises sobre tendências do futuro e <code>brincar de advinho</code>. Se o R continuar na sua tendência de crescimento e aprimoramento nas ferramentas de ciências de dados, este continuará sendo uma ferramenta presente nas pesquisas ecológicas. Possívelmente, mais presente do que já é.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+<script src="../../site_libs/quarto-html/zenscroll-min.js"></script>
+</body></html>

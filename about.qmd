@@ -1,18 +1,41 @@
 ---
-title: "Edson Silva-Junior"
-image: foto4.jpeg
+title: "Formação e contatos"
+image: profile.png
 about:
-  template: jolla
+  template: trestles
   links:
+    - icon: instagram
+      text: Instagram
+      href: https:://instagram.com//edbbio
     - icon: twitter
       text: Twitter
       href: https://twitter.com//edbbio
-    - icon: linkedin
-      text: LinkedIn
-      href: https://linkedin.com
     - icon: github
       text: Github
       href: https://github.com
+    - icon: gmail
+      text: Gmail
+      href: edson.nilton@gmail.ufpe
 ---
 
-Bacharel em Ciências Biológicas pela UFPE, campus Recife. Aluno de Mestrado no Programa de Pós Graduação em Biologia Animal (PPGBA) - UFPE, e membro do Laboratório de Herpetologia (LHERP) - UFPE. Desempenha pesquisas principalmente com foco em entender como modificações e padrões ambientais afetam a diversidade e distribuição de anfíbios anuros na Mata Atlântica Nordestina. Atua na área de zoologia, com ênfase em herpetologia, com experiência em linguagem de programação R, com ênfase em modelagem estatística e ecológica.
+# **Formação**
+
+* Bacharel em Ciências Biológicas pela UFPE, campus Recife.
+
+* Aluno de Mestrado no Programa de [Pós Graduação em Biologia Animal](https://www.ufpe.br/ppgba) (PPGBA) - UFPE
+
+---------------------
+
+## **Atuação**
+
+* Membro do [Laboratório de Herpetologia](https://sites.ufpe.br/herpetologia/) (LHERP) - UFPE. 
+
+* Desempenha pesquisas com foco em entender como modificações e padrões ambientais afetam a diversidade e distribuição de anfíbios anuros na Mata Atlântica Nordestina. 
+
+* Atua na área de zoologia, com ênfase em herpetologia, com experiência em linguagem de programação R, com ênfase em modelagem estatística e ecológica.
+
+---------------------
+
+# **Currículo Lattes**
+
+* [Edson Nilton de Moura Silva Júnior](https://buscatextual.cnpq.br/buscatextual/visualizacv.do)

@@ -1,16 +1,30 @@
 ---
-title: "Edson Silava-Junior"
-image: foto4.jpeg
+title: "Ecologia, estatística e ciência de dados"
+image: profile.jpg
 listing:
   contents: posts
   sort: "date desc"
-  type: default
+  type: grid
   categories: true
-  sort-ui: false
-  filter-ui: false
-page-layout: full
+  sort-ui: true
+  filter-ui: true
+page-layout: article
 title-block-banner: true
 ---
 
+![](profile.png)
 
+```{=html}
+<style>
+body {
+text-align: justify;
+font-size: 20px}
+blockquote {
+  background-color: #FAEFA6;
+  padding: 10px;
+  font-size: 14.5px
+}
+</style>
+```
 
+Me chamado Edson (ou apenas Ed). Desde sempre, um menino apaixonado pela biodiversidade e a vida no nosso planeta. Mais recentemente, um mestrando interessado em entender como o ambiente afeta diversidade e diversão de anfíbios anuros na Mata Atlântico no Nordeste do Brasil. Esse blog é dedicado à estatística e ciência de dados aplicadas à ecologia e conservação. Espero que goste dos posts abaixo!

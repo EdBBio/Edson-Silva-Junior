@@ -1,0 +1,96 @@
+---
+title: "Por que o R se tornou popular na ecologia?"
+author: "Edson Silva-Júnior"
+image: image.png
+categories: [review]
+format: 
+  html:
+    toc: true
+    toc-depth: 5
+    toc-expand: 1
+    toc-location: left
+    toc-title: Contents
+    number-sections: false
+    df-print: paged
+    smooth-scroll: true
+editor: visual
+---
+
+Um review sobre o que fez o R ser a principal ferramenta de analises de dados ecológicos.
+
+```{=html}
+<style>
+body {
+text-align: justify;
+font-size: 20px}
+blockquote {
+  background-color: #FAEFA6;
+  padding: 10px;
+  font-size: 14.5px
+}
+</style>
+```
+
+![](image.png)
+
+Se você trabalha com ecologia, dificilmente não teve algum contato com o R, mesmo que você não o use. O R atualmente se tornou a principal ferramento dos ecólogos e biólogos interessados em meio ambiente no quesito análise de dadso. Mesmo quem não o usa acab tendo um contato, nem que de forma indireta, com ele, graças a colegas e colaboradores. O R se tornou quase que onipresente ao redor do mundo nos grupos de pesquisa sobre ecologia. Mas Por que tanta popularidade para essa linguagem de proogramação nesse contexto?
+
+# **O R é realmente popular na ecologia?**
+
+A primeira pergunta necessária para começar essa conversa: o R é tão popular assim? A resposta mais direta: sim, e há dados sobre isso.
+
+Em um trabalho publicado por Lai *et al.* ([2019](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecs2.2567#:~:text=The%20increasing%20popularity%20of%20R,codes%20are%20included%20and%20shared)), os pesquisadores observaram a frequência de citaçãoes de pacotes R em mais de 60.000 artigos, publicados em 30 revistas especializadas e, ecologia, durante o período de 2007-2017. O que eles observaram foi um crescimento constante quase que perfeito ao longo dos anos (r = 0,99, p < 0,0001).
+
+![[Lai *et al.* 2019](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecs2.2567#:~:text=The%20increasing%20popularity%20of%20R,codes%20are%20included%20and%20shared)](lai et al. 2019.jpeg)
+
+Isso nos ajuda a ter um pouco de dimensão de que, ao longo dos anos, não apenas sua popularidade cresceu na ecologia, como é existente e  em marcante.
+
+# **O que faz ser tão popular?**
+
+## Modelagem estatística
+
+![](regressao.png)
+
+A ecologia é uma das ciências da vida com um dos mais fortes usos de esatística para responder suas perguntas. É até considerada uma "desilusão" que muitos passam ao iniciar na ecologia perceber que boa parte do seu trablho será modelando dados. Como o intuíto da própria criação do R está em ser uma linguagem de programação voltada e acessível a cientistas, principalmente os que usam estatística, O R é quase que a linguagem de programação perfeita para a ecologia.
+
+O R apresenta diversas ferramentas flexíveis e muito úteis nesses estudos, como o próprio pacot nativo [stats](https://rdrr.io/r/stats/stats-package.html), que possui as principais funções estatísticas, como estaística descritiva e os testes de hipótese. Além de outros pacotes relacionados, como o pacote [vegan](https://github.com/vegandevs/vegan), que além de trazer análises sobre métricas de ecologia de comunidades, ainda oferece análises estatísticas multidimensionais, como nMDS, RDA e PERMANOVA, [betareg](), que permite a criação de modelos de GLM (*Generalized Linear Models* - Modelos Lineares Generalizados) com distribuição beta dos resíduos, [gamm4](https://CRAN.R-project.org/package=gamm4), para a criação de GAMs (*Generalized Additive Models* - Modelos Aditivos Generalizados), e o pacote [performance](https://easystats.github.io/performance/), para diversos tipos de avaliações de modelo.
+
+devido essa grande variedade de ferramentas dee modelagem estatística, assim como diversos outros pacotes faz com que seja possível utilizar diversas análises juntas, em um mesmo pacote, assim como reutilizar dados destas para análises posteriores.
+
+## Modelagem ecológicas
+
+![](modelagem_nicho.png)
+
+Toda ciência tem suas `análises exclusivas`, e a ecologia não é excessão. Além do já citado pacote [vegan](https://github.com/vegandevs/vegan), muito utilizado para análises de diversidade biológica de ecologia de comunidades, há também outros pacotes, como o pacote [FD](https://cran.r-project.org/web/packages/FD/index.html), para análises  de diversidade funcional, o pacote [ade4](https://doi.org/10.18637/jss.v022.i04), também utilizado para estudos sobre ecologia e evolução. Para citar pacotes brasileiros, há o pacote [ecodados](https://github.com/paternogbc/ecodados), que é um pacote que reúne diversas bases de dados, com fins de ensino de ecologia. 
+
+Além destes, há um conjunto de pacotes voltados aos SDM (*Species Dsitribution Models* - Modelos de Dsitribuição de Espécies), como os pacotes [sdm](https://github.com/babaknaimi/sdm), [usdm](https://doi.org/10.1111/j.1600-0587.2013.00205.x) e [dismo](https://CRAN.R-project.org/package=dismo). 
+
+Um aspecto interessante sobre como o R funciona que facilita as análises de fins ecológicos é que, pelo R ser uma linguuage de código aberto, o que significa que qualquer um pode contribuir com a criação de novos pacotes, adiconado à grande velocidade com o qual novos métodos sobre ecologia acontecem, faz com que o R Seja um ambiente ideal para o uso de ferramentas de análises de dados ecológicos.
+
+## Análises geoespaciais
+
+![](biomas.png)
+
+Uma boa parte de estudos ecológicos se dá em análises e tratamentos de dados geoespaciais. Nos últimos anos, o R tem desempenhado um papel importante dentro das linguagens de programção voltadas para as ciências de dados na parte de análises geoespaciais.
+
+No R, há um conjunto de pacotes muito úteis para diversos desses fins. Exemplos são os pacotes [sf](https://doi.org/10.1201/9780429459016) e [sp](https://CRAN.R-project.org/doc/Rnews/), muito úteis para análises e tratamentos de shapefiles (`.shp`, `.kml` e `.kmz`), os pacotes [raster](https://CRAN.R-project.org/package=raster), [geodata](https://CRAN.R-project.org/package=geodata) e [terra](https://CRAN.R-project.org/package=terra), bastante versáteis em análises de rasters (`.tif` e `.tiff`), e o há pouco tempo lançado [tidyterra](https://doi.org/10.21105/joss.05751), implementando ótimas ferramentas para a visualização de dados geoespaciais.
+
+## Controle de dados e reprodutibilidade
+
+![](histograma.png)
+
+Uma das principais características de uma ciência considerada `boa` e `de qualidade` é um alto grau de reprodutibilidade: a capacidade de outros repetirem as mesmas investições e chegarem em resultados muito semelhantes. Parte dessa boa prática vem de um controle na fase de análise e modelagem dos dados.
+
+Aliado aos tópicos explicados anteriormentes, por ser uma linguagem de programação, o R permite não apenas comparar práticas, assim como também revisar as etapas das análises dos dados. Além disso, o R atualmente apresenta um conjunto ferramentas muito úteis para o tratamento e processamento de dados, principalmente nos pacotes que fazem parte do grupo [tidyverse](https://www.tidyverse.org/), dando maior mobilidade para as análises, mesmo em bancos de dados com estruturações não tão vantajosas.
+
+## Visualização de dados
+
+![](rda.png)
+
+Por mais que o que de fato seja o `ouro` dos artigos sejam os resultados, principalmente os valores de análises estatísticas, muito do que fazem os artigos, assim como seus resultados, são os gráficos. No caso da ecologia, mapas também. 
+
+Atualmente, o R é a linguagem de programação mais avançada no que se refere À riação de gráficos e mapas. Grande parte disso é devido ao pacote [ggplot2](https://ggplot2.tidyverse.org/index.html), um dos pacotes do grupo [tidyverse](https://www.tidyverse.org/), que permite a criação de mapas com uma variedade muito grande de formas e cores. Aliado ao pacote, existem outros pacotes que servem como extenções deste, como o já citado [tidyterra](https://doi.org/10.21105/joss.05751), para a criação de mapas, e o pacote [ggtext](https://CRAN.R-project.org/package=ggtext), para textos como caracteres complexos. Além de gráficos, há pacotes para a criação de tabelas, como os pacotes [flextable](https://CRAN.R-project.org/package=flextable) e [gt](https://CRAN.R-project.org/package=gt). Para dados complexos, assim como diversas informações sobre análises e modelos estatísticos feitos, muito comuns na ecologia, o R se torna uma ferramenta insdispensável.
+
+# **Qual o futuro?**
+
+Existe uma linha tênue na futurologia entre análises sobre tendências do futuro e `brincar de advinho`. Se o R continuar na sua tendência de crescimento e aprimoramento nas ferramentas de ciências de dados, este continuará sendo uma ferramenta presente nas pesquisas ecológicas. Possívelmente, mais presente do que já é.

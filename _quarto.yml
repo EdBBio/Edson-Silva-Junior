@@ -2,17 +2,38 @@ project:
   type: website
 
 website:
-  title: "Edson Silava-Junior"
+  title: "Edson Silva-Júnior"
+  image: foto4.jpeg
   navbar:
-    right:
+    background: dark
+    search: true
+    left:
+      - text: "Posts"
+        file: index.qmd
       - about.qmd
-      - icon: github
-        href: https://github.com//edbbio
+      - sidebar:Title1
+    right:
+      - icon: instagram
+        href: https:://instagram.com//edbbio
       - icon: twitter
         href: https://twitter.com//edbbio
+      - icon: github
+        href: https://github.com//edbbio
+      - icon: gmail
+        href: edson.nilton@gmail.ufpe
+  sidebar:
+   - id: Title1
+     title: "Materiais de estudo"
+     style: docked
+     background: dark
+     contents:
+      - text: "slides Ecologia Numérica"
+        file: slides_ecologia_numerica.pdf
 format:
   html:
-    theme: sandstone
+    theme:
+      light: sandstone
+      dark: darkly
     css: styles.css
 
 editor: visual
