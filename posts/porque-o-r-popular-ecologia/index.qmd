@@ -16,7 +16,7 @@ format:
 editor: visual
 ---
 
-Um review sobre o que fez o R ser a principal ferramenta de analises de dados ecológicos.
+**Um review sobre o que fez o R ser a principal ferramenta de analises de dados ecológicos.**
 
 ```{=html}
 <style>

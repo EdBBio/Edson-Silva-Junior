@@ -8,7 +8,7 @@
 
 <meta name="author" content="Edson Silva-Júnior">
 
-<title>Edson Silva-Júnior - Por que o R se tornou popular na ecologia?</title>
+<title>Edson Silva-Júnior - Quais variáveis escolher para o meu modelo?</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -145,9 +145,10 @@ ul.task-list li input[type="checkbox"] {
 <header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Por que o R se tornou popular na ecologia?</h1>
+      <h1 class="title">Quais variáveis escolher para o meu modelo?</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">review</div>
+                <div class="quarto-category">análise</div>
+                <div class="quarto-category">código</div>
               </div>
                   </div>
   </div>
@@ -174,16 +175,29 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Contents</h2>
    
   <ul>
-  <li><a href="#o-r-é-realmente-popular-na-ecologia" id="toc-o-r-é-realmente-popular-na-ecologia" class="nav-link active" data-scroll-target="#o-r-é-realmente-popular-na-ecologia"><strong>O R é realmente popular na ecologia?</strong></a></li>
-  <li><a href="#o-que-faz-ser-tão-popular" id="toc-o-que-faz-ser-tão-popular" class="nav-link" data-scroll-target="#o-que-faz-ser-tão-popular"><strong>O que faz ser tão popular?</strong></a>
+  <li><a href="#o-que-são-modelos" id="toc-o-que-são-modelos" class="nav-link active" data-scroll-target="#o-que-são-modelos"><strong>O que são modelos?</strong></a></li>
+  <li><a href="#importância-ecológica-e-biológica" id="toc-importância-ecológica-e-biológica" class="nav-link" data-scroll-target="#importância-ecológica-e-biológica"><strong>Importância ecológica e biológica</strong></a></li>
+  <li><a href="#multicolinearidade" id="toc-multicolinearidade" class="nav-link" data-scroll-target="#multicolinearidade"><strong>Multicolinearidade</strong></a>
   <ul>
-  <li><a href="#modelagem-estatística" id="toc-modelagem-estatística" class="nav-link" data-scroll-target="#modelagem-estatística">Modelagem estatística</a></li>
-  <li><a href="#modelagem-ecológicas" id="toc-modelagem-ecológicas" class="nav-link" data-scroll-target="#modelagem-ecológicas">Modelagem ecológicas</a></li>
-  <li><a href="#análises-geoespaciais" id="toc-análises-geoespaciais" class="nav-link" data-scroll-target="#análises-geoespaciais">Análises geoespaciais</a></li>
-  <li><a href="#controle-de-dados-e-reprodutibilidade" id="toc-controle-de-dados-e-reprodutibilidade" class="nav-link" data-scroll-target="#controle-de-dados-e-reprodutibilidade">Controle de dados e reprodutibilidade</a></li>
-  <li><a href="#visualização-de-dados" id="toc-visualização-de-dados" class="nav-link" data-scroll-target="#visualização-de-dados">Visualização de dados</a></li>
+  <li><a href="#matriz-de-correlação" id="toc-matriz-de-correlação" class="nav-link" data-scroll-target="#matriz-de-correlação">Matriz de correlação</a></li>
+  <li><a href="#fator-de-inflação-da-variância-variance-factor-inflaction---vif" id="toc-fator-de-inflação-da-variância-variance-factor-inflaction---vif" class="nav-link" data-scroll-target="#fator-de-inflação-da-variância-variance-factor-inflaction---vif">Fator de inflação da Variância (<em>Variance Factor Inflaction</em> - VIF)</a></li>
+  <li><a href="#redução-através-análises-de-ordenação-irrestrita" id="toc-redução-através-análises-de-ordenação-irrestrita" class="nav-link" data-scroll-target="#redução-através-análises-de-ordenação-irrestrita">Redução através análises de ordenação irrestrita</a>
+  <ul>
+  <li><a href="#análise-de-componentes-principais-principal-components-analysis---pca" id="toc-análise-de-componentes-principais-principal-components-analysis---pca" class="nav-link" data-scroll-target="#análise-de-componentes-principais-principal-components-analysis---pca">Análise de Componentes Principais (<em>Principal Components Analysis</em> - PCA)</a></li>
+  <li><a href="#análise-de-coordenadas-principais-principal-coordinates-analysis---pcoa" id="toc-análise-de-coordenadas-principais-principal-coordinates-analysis---pcoa" class="nav-link" data-scroll-target="#análise-de-coordenadas-principais-principal-coordinates-analysis---pcoa">Análise de Coordenadas Principais (<em>Principal coordinates Analysis</em> - PCoA)</a></li>
   </ul></li>
-  <li><a href="#qual-o-futuro-podemos-esperar" id="toc-qual-o-futuro-podemos-esperar" class="nav-link" data-scroll-target="#qual-o-futuro-podemos-esperar"><strong>Qual o futuro podemos esperar?</strong></a></li>
+  </ul></li>
+  <li><a href="#contribuição-para-o-modelo" id="toc-contribuição-para-o-modelo" class="nav-link" data-scroll-target="#contribuição-para-o-modelo"><strong>Contribuição para o modelo</strong></a>
+  <ul>
+  <li><a href="#análise-de-componentes-principais-principal-components-analysis---pca-1" id="toc-análise-de-componentes-principais-principal-components-analysis---pca-1" class="nav-link" data-scroll-target="#análise-de-componentes-principais-principal-components-analysis---pca-1">Análise de Componentes Principais (<em>Principal Components Analysis</em> - PCA)</a></li>
+  <li><a href="#análise-de-coordenadas-principais-principal-coordinates-analysis---pcoa-1" id="toc-análise-de-coordenadas-principais-principal-coordinates-analysis---pcoa-1" class="nav-link" data-scroll-target="#análise-de-coordenadas-principais-principal-coordinates-analysis---pcoa-1">Análise de Coordenadas Principais (<em>Principal coordinates Analysis</em> - PCoA)</a></li>
+  </ul></li>
+  <li><a href="#análises-baseadas-em-simplicidade-dos-modelos" id="toc-análises-baseadas-em-simplicidade-dos-modelos" class="nav-link" data-scroll-target="#análises-baseadas-em-simplicidade-dos-modelos"><strong>Análises baseadas em simplicidade dos modelos</strong></a>
+  <ul>
+  <li><a href="#teste-de-índice-verossimilhança-likelyhood-ratio-test---lrt" id="toc-teste-de-índice-verossimilhança-likelyhood-ratio-test---lrt" class="nav-link" data-scroll-target="#teste-de-índice-verossimilhança-likelyhood-ratio-test---lrt">Teste de Índice Verossimilhança (<em>Likelyhood Ratio Test</em> - LRT)</a></li>
+  <li><a href="#critério-de-informação-de-akaike-akaike-information-criterium---aic-e-critério-de-informação-bayesiana-bayesian-information-criterium---bic" id="toc-critério-de-informação-de-akaike-akaike-information-criterium---aic-e-critério-de-informação-bayesiana-bayesian-information-criterium---bic" class="nav-link" data-scroll-target="#critério-de-informação-de-akaike-akaike-information-criterium---aic-e-critério-de-informação-bayesiana-bayesian-information-criterium---bic">Critério de Informação de Akaike (<em>Akaike Information Criterium</em> - AIC) e Critério de informação Bayesiana (<em>Bayesian Information Criterium</em> - BIC)</a></li>
+  </ul></li>
+  <li><a href="#não-existe-modelo-perfeito" id="toc-não-existe-modelo-perfeito" class="nav-link" data-scroll-target="#não-existe-modelo-perfeito"><strong>Não existe modelo perfeito</strong></a></li>
   </ul>
 </nav>
 </nav>
@@ -198,7 +212,8 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p><strong>Um review sobre o que fez o R ser a principal ferramenta de analises de dados ecológicos.</strong></p>
+<p><img src="image.png" class="img-fluid"></p>
+<p><strong>Uma análise sobre os principais métodos de escolha de variáveis de modelos, com aplicações em R</strong>.</p>
 <style>
 body {
 text-align: justify;
@@ -209,19 +224,20 @@ blockquote {
   font-size: 14.5px
 }
 </style>
-<p><img src="image.png" class="img-fluid"></p>
-<p>Se você trabalha com ecologia, dificilmente não teve algum contato com o R, mesmo que você não o use. O R atualmente se tornou a principal ferramenta dos ecólogos e biólogos interessados em meio ambiente no quesito análise de dados. Mesmo quem não o usa acaba tendo algum tipo contato com o mesmo, nem que de forma indireta, graças a colegas e colaboradores que o usam. O R se tornou quase que onipresente ao redor do mundo nos grupos de pesquisa sobre ecologia. Mas Por que tanta popularidade para essa linguagem de proogramação, nesse contexto? O que tem o R e os estudos ecológicos que fizeram ser uma combinação tão replicada?</p>
-<section id="o-r-é-realmente-popular-na-ecologia" class="level1">
-<h1><strong>O R é realmente popular na ecologia?</strong></h1>
-<p>A primeira pergunta necessária para começar essa conversa: o R é tão popular assim? Essa afirmação possui alguma forma de corroboração que seja além de experiências pessoais? A resposta mais direta: sim. E o melhor: há dados sobre isso.</p>
-<p>Em um trabalho publicado por Lai <em>et al.</em> (<a href="https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecs2.2567#:~:text=The%20increasing%20popularity%20of%20R,codes%20are%20included%20and%20shared">2019</a>), os pesquisadores observaram a frequência de citaçãoes de pacotes R em mais de 60.000 artigos, publicados em 30 revistas especializadas em ecologia, durante o período de 2007-2017. O que eles observaram foi um crescimento constante, quase que perfeito, ao longo dos anos. Medindo a correlção entre o passar dos anos e as citações, houve uma correlação muito alta (r = 0,99, p &lt; 0,0001).</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="lai et al. 2019.jpeg" class="img-fluid figure-img"></p>
-<figcaption><a href="https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecs2.2567#:~:text=The%20increasing%20popularity%20of%20R,codes%20are%20included%20and%20shared">Lai <em>et al.</em> 2019</a></figcaption>
-</figure>
-</div>
-<p>Isso nos ajuda a ter um pouco de dimensão de que, ao longo dos anos, não apenas sua popularidade na ecologia existe, mas também que apenas cresceu.</p>
+<p>A Ecologia é a ciência responsável por tentar entender como os organismos reagem com a interação com o seu ambiente, incluindo outros organismos. Por causa disso, a ecologia utiliza de forte uso de modelagens matemáticas e estatísticas para medir se as relações pesquisadas existem e o quanto elas são fortes. Então como a ecologia trabalha em modelar relações dos seres vivos com o mundo, é importante que seus modelos estejam bem ajustados, minimizando os erros associados. Uma das etapas mais importantes da criação de um modelo é a escolha das principais variáveis utilizadas no modelo. Aí entramos em uma das maiores perguntas quando se fala de modelos: quais variáveis utilizar no meu modelo?</p>
+<section id="o-que-são-modelos" class="level1">
+<h1><strong>O que são modelos?</strong></h1>
+<p>A terceira década do século XXI (2021-2030) será marcada pelo uso de tecnologias que “pensam por si só”. Nesse época se fala muito dos modelos generativos de informação, como o famoso <a href="https://chat.openai.com/">ChatGPT</a>. E por mais que engenheiros de softwares voltados para Inteligências Artificiais e analistas de dados econômicos, com uma certa frequêncai, tentem reinvidicar que seus modelos são <em>perfeitos</em>, a realidade é que todos estão errados.</p>
+<p>Modelos, no contexto matemático e estatístico, são <em>tentativas</em> de representar fenômenos do mundo real para números e algorítimos, que gerem resultados que possam ser interpretados como a expressão destes fenômenos. Mas a palavra chave é exatamente essa: <em>tentativas</em>. Acontece que nenhum modelo consegue ser o fenômeno modelado, mas sim parte dele. Alguns mais parecidos, outros menos. Mas, no fim, nenhum representa de fato os fenômenos estudados. A diferença entre os resultados que um modelo encontrou para o fenômeno do mundo real que este tentou modelar é o que chamamos de <code>erro</code>. Logo, quanto menos distância existe entre os resultados de um modelo e o fenômeno do mundo real, menos errado ele é. Dentro da ecologia, um exemplo clássico disso são os modelos de crescimento populacional, que não são perfeitas, possuem erros, mas são extremamente úteis nas tomadas de decisão envolvendo conservação de biodiversidade e controle de epidemias.</p>
+<p><img src="george.box.png" class="img-fluid"></p>
+<p>Existem diferentes formas de avaliar os erros de um modelo:</p>
+<ol type="1">
+<li><p>A forma mais simples é olhar para o que o modelo gerou e comparar o quão diferente isto é do fenômeno estudado;</p></li>
+<li><p>Com estatística descritiva, os erros podem ser medidos através de avaliações com medidas de tendência central, como a média, aliadas à medidas de dispersão, como o desvio padrão. Com estatística frequentista em testes de hipótese, os erros podem ser avaiados como a diferença entre a estatística calculada (testes <em>T</em>, <em>Z</em>, <em>W</em>, <em>F</em>, <em>X<sup>2</sup></em>, etc.) e a estatística crítica;</p></li>
+<li><p>Também relacionada à estatística frequentista, através de coeficientes, como o coeficiente de correlação (<em>r</em>) e o coeficiente de determinação (<em>R<sup>2</sup></em>), e resultados sobre significância daqueles resultados ao acaso (<em>valor de p</em>);</p></li>
+<li><p>Através de redução de dimensionalidade das variáveis, como na estatística multidimensional, e a comparação da explicação das dimensões reduzidas;</p></li>
+<li><p>Qualquer outra forma matemática, estatística e/ou teórico-conceitual que permita medir o grau de <em>falha</em> de um modelo em medir um fenômeno de forma <em>perfeita</em>.</p></li>
+</ol>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -232,63 +248,53 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>É importante ter em mente que esses dados podem sofrer de uma subrepresentatividade: esse trabalho detectou apenas os pacotes citados, mas é comum que apenas os pacotes utilizados diretamente nas análises e modelagens de dados sejam citados. Por mais que muito utilizados também, pacotes voltados à tratamento, transformação, checagem de pressupostos e visualização de dados raramente são citados nos artigoos, por serem considerados <code>desnecessários</code> enquanto parte da descrição dos MAteriais e Métodos. Não é difícil que a popularidade do uso do R seja maior do que a que Lai <em>et al.</em> (<a href="https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecs2.2567#:~:text=The%20increasing%20popularity%20of%20R,codes%20are%20included%20and%20shared">2019</a>) observaram.</p>
+<p>É importante destacar que a única coisa que reúne todas essas coisas, de diferentes tipos de modelos, como erros é o fato de que são os resultados de <em>falhas</em> na explição <em>perfeita</em> de um fenômeno do mundo real. Mas, de forma geral, diferentes tipos de modelos apresentam diferentes formas de expressar seus erros, então a forma de avaliar os erros de um modelo precisa ser adequada não apenas para as naturezas matemáticas do modelo avaliados, mas para a teoria biológica por trás da medição daquele modelo. Um mesmo modelo pode estar mais errado ou menos errado, com os mesmos dados e sem alterar seus parâmetros, a depender da forma e das ferramentas com o qual este foi avaliado.</p>
 </div>
 </div>
+<p>E no que exatamente isso afeta na escolha de variáveis para um modelo? Adicionalmente ao que foi citado no <code>tópico 1</code> do parágrafo anterior, a escolha de variáveis pouco relevantes para um modelo pode fazer com que seu erro aumente, por diferentes motivos. Desta forma, a escolha das melhores variáveis de um modelo também influencia no seu desempenho.</p>
+<p>A seguir, veremos as principais formas utilizadas dentro da ecologia para a escolha de variáveis, abordando a teoria e a prática utilizando linguagem de programação R.</p>
 </section>
-<section id="o-que-faz-ser-tão-popular" class="level1">
-<h1><strong>O que faz ser tão popular?</strong></h1>
-<section id="modelagem-estatística" class="level2">
-<h2 class="anchored" data-anchor-id="modelagem-estatística">Modelagem estatística</h2>
-<p><img src="regressao.png" class="img-fluid"></p>
-<p>A ecologia é uma das ciências da vida com um dos mais fortes usos de estatística para responder suas perguntas de pesquisa. É até considerado uma “desilusão” o que muitos passam ao iniciar na ecologia, de perceber que boa parte do seu trablho será mais modelando dados do que em fazer coletas de campo. Como o intuíto da própria criação do R está em ser uma linguagem de programação voltada e acessível a cientistas, principalmente os que usam estatística como ferramenta de pesquisa, O R é quase que a linguagem de programação perfeita para a ecologia.</p>
-<p>O R apresenta diversas ferramentas flexíveis e muito úteis nesses estudos, como o próprio pacote nativo <a href="https://rdrr.io/r/stats/stats-package.html">stats</a>, que possui muitas das principais funções estatísticas utilizadas em diversas pesquisas ecológicas, como estaística descritiva e os testes de hipótese, além de outros pacotes relacionados, como o pacote <a href="https://github.com/vegandevs/vegan">vegan</a>, que traz análises sobre métricas de ecologia de comunidades e oferece análises estatísticas multidimensionais, como nMDS, RDA e PERMANOVA, <a href="">betareg</a>, que permite a criação de modelos de GLM (<em>Generalized Linear Models</em> - Modelos Lineares Generalizados) com distribuição beta dos resíduos, <a href="https://CRAN.R-project.org/package=gamm4">gamm4</a>, para a criação de GAMs (<em>Generalized Additive Models</em> - Modelos Aditivos Generalizados), e o pacote <a href="https://easystats.github.io/performance/">performance</a>, para diversos tipos de avaliações de modelo.</p>
-<p>Devido essa grande variedade de ferramentas de modelagem estatística, é possível utilizar diversas análises juntas, em um mesmo ambiente de desenvolvimento, assim como reutilizar dados destas para análises posteriores, sem depender de vários softwares.</p>
+<section id="importância-ecológica-e-biológica" class="level1">
+<h1><strong>Importância ecológica e biológica</strong></h1>
 </section>
-<section id="modelagem-ecológicas" class="level2">
-<h2 class="anchored" data-anchor-id="modelagem-ecológicas">Modelagem ecológicas</h2>
-<p><img src="modelagem_nicho.png" class="img-fluid"></p>
-<p>Toda ciência tem suas <code>análises exclusivas</code>, e a ecologia não é excessão. Além do já citado pacote <a href="https://github.com/vegandevs/vegan">vegan</a>, muito utilizado para análises de diversidade biológica de comunidades, há também outros pacotes, como o pacote <a href="https://cran.r-project.org/web/packages/FD/index.html">FD</a>, para análises de diversidade funcional, o pacote <a href="https://doi.org/10.18637/jss.v022.i04">ade4</a>, também utilizado para estudos sobre ecologia e evolução. Para citar pacotes brasileiros, há o pacote <a href="https://github.com/paternogbc/ecodados">ecodados</a>, que é um pacote que reúne diversas bases de dados, com fins de ensino em ecologia.</p>
-<p>Além destes, há um conjunto de pacotes voltados aos SDM (<em>Species Dsitribution Models</em> - Modelos de Dsitribuição de Espécies), como os pacotes <a href="https://github.com/babaknaimi/sdm">sdm</a>, <a href="https://doi.org/10.1111/j.1600-0587.2013.00205.x">usdm</a> e <a href="https://CRAN.R-project.org/package=dismo">dismo</a>.</p>
-<p>Um aspecto interessante sobre como o R funciona que facilita as análises de fins ecológicos é que, pelo R ser uma linguagem de código aberto, o que significa que qualquer um pode contribuir com a criação de novos pacotes e ferramentas, aliado à grande velocidade com o qual novos métodos sobre medição de processos ecológicos são desenvolvidos, faz com que o R Seja um ambiente ideal para o uso de ferramentas de análises de dados ecológicos, pois sua atualização é constante e mais rápidas que softwares de código fechado.</p>
+<section id="multicolinearidade" class="level1">
+<h1><strong>Multicolinearidade</strong></h1>
+<section id="matriz-de-correlação" class="level2">
+<h2 class="anchored" data-anchor-id="matriz-de-correlação">Matriz de correlação</h2>
 </section>
-<section id="análises-geoespaciais" class="level2">
-<h2 class="anchored" data-anchor-id="análises-geoespaciais">Análises geoespaciais</h2>
-<p><img src="biomas.png" class="img-fluid"></p>
-<p>Uma boa parte de estudos ecológicos se dá em análises e tratamentos de dados geoespaciais. Nos últimos anos, o R tem desempenhado um papel importante dentro das linguagens de programção voltadas para as ciências de dados na parte de análises e modelagens geoespaciais.</p>
-<p>Dentro do R, há um conjunto de pacotes muito úteis para diversos desses fins. Exemplos são os pacotes <a href="https://doi.org/10.1201/9780429459016">sf</a> e <a href="https://CRAN.R-project.org/doc/Rnews/">sp</a>, muito úteis para análises e tratamentos de shapefiles (<code>.shp</code>, <code>.kml</code> e <code>.kmz</code>), os pacotes <a href="https://CRAN.R-project.org/package=raster">raster</a>, <a href="https://CRAN.R-project.org/package=geodata">geodata</a> e <a href="https://CRAN.R-project.org/package=terra">terra</a>, bastante versáteis em análises de rasters (<code>.tif</code> e <code>.tiff</code>), e o há pouco tempo lançado <a href="https://doi.org/10.21105/joss.05751">tidyterra</a>, implementando ótimas ferramentas para a visualização de dados geoespaciais.</p>
+<section id="fator-de-inflação-da-variância-variance-factor-inflaction---vif" class="level2">
+<h2 class="anchored" data-anchor-id="fator-de-inflação-da-variância-variance-factor-inflaction---vif">Fator de inflação da Variância (<em>Variance Factor Inflaction</em> - VIF)</h2>
 </section>
-<section id="controle-de-dados-e-reprodutibilidade" class="level2">
-<h2 class="anchored" data-anchor-id="controle-de-dados-e-reprodutibilidade">Controle de dados e reprodutibilidade</h2>
-<p><img src="histograma.png" class="img-fluid"></p>
-<p>Uma das principais características de uma ciência considerada <code>boa</code> e <code>de qualidade</code> é um alto grau de reprodutibilidade: a capacidade de outros pesquisadores repetirem as mesmas investições e chegarem em resultados muito semelhantes. Parte dessa boa prática vem de um controle na fase de análise e modelagem dos dados.</p>
-<p>Aliado aos tópicos explicados anteriormentes, por ser uma linguagem de programação, o R permite não apenas comparar práticas, assim como também revisar as etapas das análises dos dados, já que estas estão salvas e registradas nos scripts. Além disso, o R atualmente apresenta um conjunto ferramentas muito úteis para o tratamento e processamento de dados, principalmente nos pacotes que fazem parte do grupo <a href="https://www.tidyverse.org/">tidyverse</a>, dando maior mobilidade para as análises, mesmo as que utilizam bancos de dados com estruturações não tão vantajosas.</p>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>É importante ter em mente que não basta apenas ter um script que registrou o que você fez. O script também precisa estar disponível para outros pesquisadores, como nos materiais suplementares dos artigos. Um trabalho feito por Culina <em>et al.</em> (<a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000763">2020</a>), avaliando 346 artigos aleatórios de ecologia, entre 2015-2019, observou que apenas 27% dos artigos disponibilizavam os códigos, sendo que 79% dos mesmos artigos disponibilizavam seus dados, mesmo que a política de incentivo ao compartilhamento de código pelas revistas vem crescendo ao longo dos anos.</p>
-<p>A reprodutibilidade também está no quanto aquele script está disponível, mas o quanto ele pode ser executado por terceiros. Por isso, é recomendado aos pesquisadores que sigam <a href="https://blog.curso-r.com/posts/2021-03-29-desvendando-erros/">boas práticas de codagem</a>, como a documentação dos seus scripts, declarar quais pacotes e funções foram utilizadas e tornar o código linear. Ivimey <em>et al.</em> (<a href="https://academic.oup.com/jeb/article/36/10/1347/7577476?login=false">2023</a>) argumentam códigos mal estruturados podem propagar práticas nocivas dentro da ecologia.</p>
-</div>
-</div>
+<section id="redução-através-análises-de-ordenação-irrestrita" class="level2">
+<h2 class="anchored" data-anchor-id="redução-através-análises-de-ordenação-irrestrita">Redução através análises de ordenação irrestrita</h2>
+<section id="análise-de-componentes-principais-principal-components-analysis---pca" class="level3">
+<h3 class="anchored" data-anchor-id="análise-de-componentes-principais-principal-components-analysis---pca">Análise de Componentes Principais (<em>Principal Components Analysis</em> - PCA)</h3>
 </section>
-<section id="visualização-de-dados" class="level2">
-<h2 class="anchored" data-anchor-id="visualização-de-dados">Visualização de dados</h2>
-<p><img src="rda.png" class="img-fluid"></p>
-<p>Por mais que o que de fato seja o <code>ouro</code> dos artigos são os resultados, principalmente os valores de análises estatísticas, muito do que fazem os artigos mais legíveis, assim como seus resultados, são os gráficos e tabelas. No caso da ecologia, mapas também.</p>
-<p>Atualmente, o R é a linguagem de programação mais avançada no que se refere À criação de gráficos, tabelas e mapas. Grande parte disso é devido ao pacote <a href="https://ggplot2.tidyverse.org/index.html">ggplot2</a>, um dos pacotes do grupo <a href="https://www.tidyverse.org/">tidyverse</a>, que permite a criação de gráficos e mapas com uma variedade muito grande de formas e cores. Aliado ao pacote, existem outros pacotes que servem como extenções deste, como o já citado <a href="https://doi.org/10.21105/joss.05751">tidyterra</a>, para a criação de mapas, e o pacote <a href="https://CRAN.R-project.org/package=ggtext">ggtext</a>, para textos como caracteres complexos. Além de gráficos e mapas, há pacotes para a criação de tabelas, como os pacotes <a href="https://CRAN.R-project.org/package=flextable">flextable</a> e <a href="https://CRAN.R-project.org/package=gt">gt</a>. Para dados complexos, assim como diversas informações sobre análises e modelos estatísticos feitos, muito comuns na ecologia, o R se torna uma ferramenta insdispensável.</p>
+<section id="análise-de-coordenadas-principais-principal-coordinates-analysis---pcoa" class="level3">
+<h3 class="anchored" data-anchor-id="análise-de-coordenadas-principais-principal-coordinates-analysis---pcoa">Análise de Coordenadas Principais (<em>Principal coordinates Analysis</em> - PCoA)</h3>
 </section>
 </section>
-<section id="qual-o-futuro-podemos-esperar" class="level1">
-<h1><strong>Qual o futuro podemos esperar?</strong></h1>
-<p>Existe uma linha tênue na futurologia entre análises sérias sobre tendências do futuro e <code>brincar de advinho</code>. Se o R continuar na sua tendência de crescimento e aprimoramento nas ferramentas de ciências de dados, este continuará sendo uma ferramenta presente nas pesquisas ecológicas. Possívelmente, mais presente do que já é.</p>
-<p>Por mais que muitos pesquisadores, principalmente os mais velhos, relutem no uso do R como suas ferramentas de dados nos estudos ecológicos, pelos seus mais diversos motivos, a tendência é que cada vez mais o R ganhe mais espaço dentro da ecologia, principalmente pelos pesquisadores mais novos e os que ainda estão em formação, podendo até substituir, em algum momento e para algumas linhas de pesquisas, os softwares <em>point and click</em>. A tendência é de ecológos e biólogos ligados à ecologia se tornem cada vez mais programadores também, como parte de sua formação profissional.</p>
+</section>
+<section id="contribuição-para-o-modelo" class="level1">
+<h1><strong>Contribuição para o modelo</strong></h1>
+<section id="análise-de-componentes-principais-principal-components-analysis---pca-1" class="level2">
+<h2 class="anchored" data-anchor-id="análise-de-componentes-principais-principal-components-analysis---pca-1">Análise de Componentes Principais (<em>Principal Components Analysis</em> - PCA)</h2>
+</section>
+<section id="análise-de-coordenadas-principais-principal-coordinates-analysis---pcoa-1" class="level2">
+<h2 class="anchored" data-anchor-id="análise-de-coordenadas-principais-principal-coordinates-analysis---pcoa-1">Análise de Coordenadas Principais (<em>Principal coordinates Analysis</em> - PCoA)</h2>
+</section>
+</section>
+<section id="análises-baseadas-em-simplicidade-dos-modelos" class="level1">
+<h1><strong>Análises baseadas em simplicidade dos modelos</strong></h1>
+<section id="teste-de-índice-verossimilhança-likelyhood-ratio-test---lrt" class="level2">
+<h2 class="anchored" data-anchor-id="teste-de-índice-verossimilhança-likelyhood-ratio-test---lrt">Teste de Índice Verossimilhança (<em>Likelyhood Ratio Test</em> - LRT)</h2>
+</section>
+<section id="critério-de-informação-de-akaike-akaike-information-criterium---aic-e-critério-de-informação-bayesiana-bayesian-information-criterium---bic" class="level2">
+<h2 class="anchored" data-anchor-id="critério-de-informação-de-akaike-akaike-information-criterium---aic-e-critério-de-informação-bayesiana-bayesian-information-criterium---bic">Critério de Informação de Akaike (<em>Akaike Information Criterium</em> - AIC) e Critério de informação Bayesiana (<em>Bayesian Information Criterium</em> - BIC)</h2>
+</section>
+</section>
+<section id="não-existe-modelo-perfeito" class="level1">
+<h1><strong>Não existe modelo perfeito</strong></h1>
 
 
 </section>

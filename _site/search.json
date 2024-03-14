@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Ecologia, estatística e ciência de dados",
     "section": "",
-    "text": "Me chamo Edson (ou apenas Ed). Desde sempre, um menino apaixonado pela biodiversidade e a vida no nosso planeta. Mais recentemente, um mestrando interessado em entender como o ambiente afeta diversidade e diversão de anfíbios anuros na Mata Atlântico no Nordeste do Brasil. Esse blog é dedicado à estatística e ciência de dados aplicadas à ecologia e conservação. Espero que goste dos posts abaixo!\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nPor que o R se tornou popular na ecologia?\n\n\n\nreview\n\n\n\n\n\n\n\nEdson Silva-Júnior\n\n\n\n\n\n\n\n\nNo matching items"
+    "text": "Me chamo Edson (ou apenas Ed). Desde novo, um menino apaixonado pela natureza, biodiversidade, a vida no nosso planeta e, mais do que tudo, entender como tudo isso acontece. Bacharel em Ciências Biológicas pela Universidade Federal de Pernambuco (UFPE - Recife), e mais recentemente um mestrando interessado em entender como o ambiente afeta diversidade e dispersão de anfíbios anuros na Mata Atlântica do Nordeste do Brasil, e também um pouquinho de outras formas de biodiversidade. Esse blog é dedicado à estatística e ciência de dados, principalmente aplicadas à ecologia e conservação da biodiversidade. Ficou interessado? Clica nos posts abaixo! Quer entrar em contato? Clica aí em cima, em Formação e Contatos!\n\n\n\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\n\n\n\n\nPor que o R se tornou popular na ecologia?\n\n\n\nreview\n\n\n\n\n\n\n\nEdson Silva-Júnior\n\n\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/post-with-code/index.html",
@@ -75,5 +75,61 @@
     "title": "Por que o R se tornou popular na ecologia?",
     "section": "Visualização de dados",
     "text": "Visualização de dados\n\nPor mais que o que de fato seja o ouro dos artigos são os resultados, principalmente os valores de análises estatísticas, muito do que fazem os artigos mais legíveis, assim como seus resultados, são os gráficos e tabelas. No caso da ecologia, mapas também.\nAtualmente, o R é a linguagem de programação mais avançada no que se refere À criação de gráficos, tabelas e mapas. Grande parte disso é devido ao pacote ggplot2, um dos pacotes do grupo tidyverse, que permite a criação de gráficos e mapas com uma variedade muito grande de formas e cores. Aliado ao pacote, existem outros pacotes que servem como extenções deste, como o já citado tidyterra, para a criação de mapas, e o pacote ggtext, para textos como caracteres complexos. Além de gráficos e mapas, há pacotes para a criação de tabelas, como os pacotes flextable e gt. Para dados complexos, assim como diversas informações sobre análises e modelos estatísticos feitos, muito comuns na ecologia, o R se torna uma ferramenta insdispensável."
+  },
+  {
+    "objectID": "posts/quais-variaves-escolher-para-o-meu-modelo/index.html",
+    "href": "posts/quais-variaves-escolher-para-o-meu-modelo/index.html",
+    "title": "Quais variáveis escolher para o meu modelo?",
+    "section": "",
+    "text": "Uma análise sobre os principais métodos de escolha de variáveis de modelos, com aplicações em R.\nA Ecologia é a ciência responsável por tentar entender como os organismos reagem com a interação com o seu ambiente, incluindo outros organismos. Por causa disso, a ecologia utiliza de forte uso de modelagens matemáticas e estatísticas para medir se as relações pesquisadas existem e o quanto elas são fortes. Então como a ecologia trabalha em modelar relações dos seres vivos com o mundo, é importante que seus modelos estejam bem ajustados, minimizando os erros associados. Uma das etapas mais importantes da criação de um modelo é a escolha das principais variáveis utilizadas no modelo. Aí entramos em uma das maiores perguntas quando se fala de modelos: quais variáveis utilizar no meu modelo?"
+  },
+  {
+    "objectID": "posts/quais-variaves-escolher-para-o-meu-modelo/index.html#matriz-de-correlação",
+    "href": "posts/quais-variaves-escolher-para-o-meu-modelo/index.html#matriz-de-correlação",
+    "title": "Quais variáveis escolher para o meu modelo?",
+    "section": "Matriz de correlação",
+    "text": "Matriz de correlação"
+  },
+  {
+    "objectID": "posts/quais-variaves-escolher-para-o-meu-modelo/index.html#fator-de-inflação-da-variância-variance-factor-inflaction---vif",
+    "href": "posts/quais-variaves-escolher-para-o-meu-modelo/index.html#fator-de-inflação-da-variância-variance-factor-inflaction---vif",
+    "title": "Quais variáveis escolher para o meu modelo?",
+    "section": "Fator de inflação da Variância (Variance Factor Inflaction - VIF)",
+    "text": "Fator de inflação da Variância (Variance Factor Inflaction - VIF)"
+  },
+  {
+    "objectID": "posts/quais-variaves-escolher-para-o-meu-modelo/index.html#redução-através-análises-de-ordenação-irrestrita",
+    "href": "posts/quais-variaves-escolher-para-o-meu-modelo/index.html#redução-através-análises-de-ordenação-irrestrita",
+    "title": "Quais variáveis escolher para o meu modelo?",
+    "section": "Redução através análises de ordenação irrestrita",
+    "text": "Redução através análises de ordenação irrestrita\n\nAnálise de Componentes Principais (Principal Components Analysis - PCA)\n\n\nAnálise de Coordenadas Principais (Principal coordinates Analysis - PCoA)"
+  },
+  {
+    "objectID": "posts/quais-variaves-escolher-para-o-meu-modelo/index.html#teste-de-índice-verossimilhança-likelyhood-ratio-test---lrt",
+    "href": "posts/quais-variaves-escolher-para-o-meu-modelo/index.html#teste-de-índice-verossimilhança-likelyhood-ratio-test---lrt",
+    "title": "Quais variáveis escolher para o meu modelo?",
+    "section": "Teste de Índice Verossimilhança (Likelyhood Ratio Test - LRT)",
+    "text": "Teste de Índice Verossimilhança (Likelyhood Ratio Test - LRT)"
+  },
+  {
+    "objectID": "posts/quais-variaves-escolher-para-o-meu-modelo/index.html#critério-de-informação-de-akaike-akaike-information-criterium---aic-e-critério-de-informação-bayesiana-bayesian-information-criterium---bic",
+    "href": "posts/quais-variaves-escolher-para-o-meu-modelo/index.html#critério-de-informação-de-akaike-akaike-information-criterium---aic-e-critério-de-informação-bayesiana-bayesian-information-criterium---bic",
+    "title": "Quais variáveis escolher para o meu modelo?",
+    "section": "Critério de Informação de Akaike (Akaike Information Criterium - AIC) e Critério de informação Bayesiana (Bayesian Information Criterium - BIC)",
+    "text": "Critério de Informação de Akaike (Akaike Information Criterium - AIC) e Critério de informação Bayesiana (Bayesian Information Criterium - BIC)"
+  },
+  {
+    "objectID": "posts/quais-variaves-escolher-para-o-meu-modelo/index.html#análise-de-componentes-principais-principal-components-analysis---pca-1",
+    "href": "posts/quais-variaves-escolher-para-o-meu-modelo/index.html#análise-de-componentes-principais-principal-components-analysis---pca-1",
+    "title": "Quais variáveis escolher para o meu modelo?",
+    "section": "Análise de Componentes Principais (Principal Components Analysis - PCA)",
+    "text": "Análise de Componentes Principais (Principal Components Analysis - PCA)"
+  },
+  {
+    "objectID": "posts/quais-variaves-escolher-para-o-meu-modelo/index.html#análise-de-coordenadas-principais-principal-coordinates-analysis---pcoa-1",
+    "href": "posts/quais-variaves-escolher-para-o-meu-modelo/index.html#análise-de-coordenadas-principais-principal-coordinates-analysis---pcoa-1",
+    "title": "Quais variáveis escolher para o meu modelo?",
+    "section": "Análise de Coordenadas Principais (Principal coordinates Analysis - PCoA)",
+    "text": "Análise de Coordenadas Principais (Principal coordinates Analysis - PCoA)"
   }
 ]
